@@ -2,7 +2,7 @@
 
 Mobile Version
 
-## Architect App
+## Arsitek.co
 
 Untuk memenuhi tugas Mata Kuliah Proyek 3.
 
