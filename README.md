@@ -3,6 +3,7 @@
 Mobile Version
 
 ## Arsitek.co
+![logoco](https://user-images.githubusercontent.com/79303700/161211240-43b0031d-2c47-4055-977c-213192e6236c.png)
 
 Untuk memenuhi tugas Mata Kuliah Proyek 3.
 
