@@ -26,7 +26,6 @@ class ProfesionalCard extends StatelessWidget {
                       image: NetworkImage(
                         consultant.projects.length > 0 &&
                                 consultant.projects[0].images.length > 0
-                            // ? "${'http://1803010.web.ti.polindra.ac.id/index.php/img/project/'}${consultant.projects[0].images[0].image}"
                             // : "http://1803010.web.ti.polindra.ac.id/index.php/img/project/desain1.jpg",
                             ? "${'${Generals.baseUrl}/img/project/'}${consultant.projects[0].images[0].image}"
                             : "${Generals.baseUrl}/img/project/desain1.jpg",
@@ -46,7 +45,6 @@ class ProfesionalCard extends StatelessWidget {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               image: NetworkImage(
-                                  // "${'http://1803010.web.ti.polindra.ac.id/index.php/img/avatar/'}${consultant.user.avatar}"),
                                   "${'${Generals.baseUrl}/img/avatar/'}${consultant.user.avatar}"),
                               fit: BoxFit.cover),
                           borderRadius: BorderRadius.circular(100)),

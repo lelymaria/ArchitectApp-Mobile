@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:architect_app/constants/theme.dart';
 import 'package:architect_app/models/preferences/auth_preference.dart';
 import 'package:architect_app/models/repositories/repository.dart';
@@ -9,15 +11,27 @@ import 'package:architect_app/views/professional/upload_desain.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:architect_app/utils/generals.dart';
+import 'package:http/http.dart' as http;
 
 class AllConsultantProject extends StatefulWidget {
   @override
   _AllConsultantProjectState createState() => _AllConsultantProjectState();
 }
 
+
 class _AllConsultantProjectState extends State<AllConsultantProject> {
+
+  final String url = 'http://192.168.42.231:8000/api/destroyproject';
+
   Repository _repository = Repository();
   AuthPreference _authPreference = AuthPreference();
+
+  Future deleteProject(String konsultanId) async {
+    String url = 'http://192.168.42.231:8000/api/destroyproject/' + konsultanId;
+
+    var response = await http.delete(Uri.parse(url));
+    return json.decode(response.body);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -115,6 +129,31 @@ class _AllConsultantProjectState extends State<AllConsultantProject> {
                                                     fontSize: 18),
                                               ),
                                             ),
+                                            Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        GestureDetector(
+                                        // onTap: (){
+                                        // Navigator.push(context, MaterialPageRoute(builder: (contex) => EditProject(project: snapshot.data
+                                        // ['data']
+                                        // [index],)));
+                                        // },
+                                          child: const Icon(Icons.edit)),
+                                        GestureDetector(
+                                          onTap: (){
+                                            deleteProject(snapshot.data['data'][index]['id'].toString()).then((value)
+                                            {
+                                              setState(() {});
+                                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Product berhasil di hapus")));
+                                            });
+                                        },
+                                          child: const Icon(Icons.delete)),
+                                          ]
+                                        ),
+                                  ],
+                                ),
                                             // if (project.isLelang == "0")
                                             //   Container(
                                             //       margin: EdgeInsets.only(

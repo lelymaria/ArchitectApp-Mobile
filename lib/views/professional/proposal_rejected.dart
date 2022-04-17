@@ -16,7 +16,7 @@ class ProposalRejected extends StatelessWidget {
       future: _repository.getAllProposal(_authPreference, 2),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         if (snapshot.hasError) {
-          return Center(child: Text("Load data gagal"));
+          return Center(child: Text("Memuat data gagal"));
         } else if (snapshot.connectionState == ConnectionState.done) {
           var res = snapshot.data;
           if (res['data'].length > 0) {

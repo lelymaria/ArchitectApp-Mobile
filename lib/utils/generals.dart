@@ -19,7 +19,7 @@ class Generals {
   static String downloadStorage = '/storage/emulated/0/Download';
 
   // static String baseUrl = "http://192.168.43.163:8000";
-  static String baseUrl = "http://192.168.100.12:8000";
+  static String baseUrl = "http://192.168.42.231:8000";
   // static String baseUrl = "http://10.0.2.2:8000";
   // static String baseUrl = "http://1803010.web.ti.polindra.ac.id";
 

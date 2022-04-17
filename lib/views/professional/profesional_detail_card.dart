@@ -24,7 +24,6 @@ class ProfesionalDetailCard extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: NetworkImage(
-                        // "${'http://1803010.web.ti.polindra.ac.id/index.php/img/project/'}${project.images[0].image}"
                         "${'${Generals.baseUrl}/img/project/'}${project.images[0].image}"
                       ),
                       fit: BoxFit.cover)),

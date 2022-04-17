@@ -18,7 +18,7 @@ class ProfesionalProjects extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Semua Proyek",
+          "Semua Project",
           style: TextStyle(color: Colors.black, fontSize: 16),
         ),
         backgroundColor: Colors.white,
