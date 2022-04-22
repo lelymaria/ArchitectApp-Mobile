@@ -10,6 +10,14 @@ class ConsultanProjects extends StatelessWidget {
     Repository _repository = Repository();
     AuthPreference _authPreference = AuthPreference();
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Semua Project",
+          style: TextStyle(color: Colors.black, fontSize: 16),
+        ),
+        backgroundColor: Colors.amber[300],
+        iconTheme: IconThemeData(color: Colors.black),
+      ),
       body: FutureBuilder(
           future: _repository.getProjectCons(_authPreference),
           builder: (context, snapshot) {
