@@ -119,7 +119,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return FutureBuilder(
         future: _authPreference.getUserData(),
-        builder: (context, snapshot) {
+        builder: (context, AsyncSnapshot snapshot) {
           if (snapshot.hasData) {
             _user = snapshot.data;
             // Subscribe topik berdasarkan role

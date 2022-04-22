@@ -115,7 +115,7 @@ class _ChatScreenState extends State<ChatScreen> {
             )
           ],
         ),
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.amber[300],
       ),
       body: Stack(
         children: [

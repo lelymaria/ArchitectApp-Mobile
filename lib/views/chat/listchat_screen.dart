@@ -68,8 +68,16 @@ class _ListChatScreenState extends State<ListChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Pesan",
+          style: TextStyle(color: Colors.black, fontSize: 16),
+        ),
+        backgroundColor: Colors.amber[300]
+        
+      ),
       body: SafeArea(
-        child: Container(margin: EdgeInsets.all(20), child: _chatRoomList()),
+        child: Container(margin: EdgeInsets.all(8), child: _chatRoomList()),
       ),
     );
   }
@@ -90,48 +98,50 @@ class ChatRoomsTile extends StatelessWidget {
             MaterialPageRoute(
                 builder: (context) => ChatScreen(chatRoomId, username)));
       },
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 20),
-        child: Row(
-          children: [
-            Container(
-              // padding: EdgeInsets.only(top: 6, left: 8, right: 8, bottom: 8),
-              width: 35,
-              height: 35,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.amber,
-              ),
-              child: Center(
-                child: Text(
-                  username.substring(0, 1),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    // fontSize: 16,
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 20, top: 20, left: 20, right: 20),
+          child: Row(
+            children: [
+              Container(
+                // padding: EdgeInsets.only(top: 6, left: 8, right: 8, bottom: 8),
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.amber,
+                ),
+                child: Center(
+                  child: Text(
+                    username.substring(0, 1),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      // fontSize: 16,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(width: 10),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    username,
-                    style: blackFontStyle2.copyWith(fontSize: 16),
-                  ),
-                  // Text(
-                  //   chat,
-                  //   style: blackFontStyle1.copyWith(fontSize: 12),
-                  //   maxLines: 1,
-                  //   overflow: TextOverflow.ellipsis,
-                  // ),
-                ],
+              SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      username,
+                      style: blackFontStyle2.copyWith(fontSize: 16),
+                    ),
+                    // Text(
+                    //   chat,
+                    //   style: blackFontStyle1.copyWith(fontSize: 12),
+                    //   maxLines: 1,
+                    //   overflow: TextOverflow.ellipsis,
+                    // ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
