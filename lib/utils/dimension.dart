@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 
+/* Dimension */
 class Dimension {
   static MediaQueryData _mediaQueryData;
   static double screenWidth;
