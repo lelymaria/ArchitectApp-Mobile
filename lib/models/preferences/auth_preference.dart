@@ -30,6 +30,7 @@ class AuthPreference {
     return prefs.get("token") == null ? false : true;
   }
 
+  /* Mendapatkan Token sesuai Login */
   Future<String> getToken() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getString("token");
