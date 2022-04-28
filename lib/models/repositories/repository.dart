@@ -28,10 +28,10 @@ import 'package:http/http.dart' as http;
 
 class Repository {
   // final String baseUrl = "http://1803010.web.ti.polindra.ac.id/index.php/api";
-  final String baseUrl = "http://192.168.42.231:8000/api";
+  // final String baseUrl = "http://192.168.42.231:8000/api";
   // final String baseUrl = "http://127.0.0.1:8888/api";
   // final String baseUrl = "http://192.168.43.170:8000/api";
-  // final String baseUrl = "http://192.168.100.12:8000/api";
+  final String baseUrl = "http://192.168.100.75:8000/api";
   // final String baseUrl = "http://192.168.43.163:8000/api";
 
   Future<LoginResponse> postLogin(LoginForm loginData) async {

@@ -75,7 +75,7 @@ class ChooseRole extends StatelessWidget {
                               ),
                               SizedBox(height: Dimension.safeBlockVertical),
                               Text(
-                                "Profesional",
+                                "Konsultan",
                                 style: blackFontStyle2,
                               ),
                             ],
