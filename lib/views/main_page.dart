@@ -190,7 +190,7 @@ class _MainPageState extends State<MainPage> {
     if (user.level == "admin") {
       switch (index) {
         case 0:
-          return ConsultanVerification();
+          return ProfesionalVerification();
         case 1:
           return PaymentVerification();
         case 2:

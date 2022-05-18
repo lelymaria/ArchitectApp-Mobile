@@ -80,8 +80,7 @@ class _ContractorVerificationState extends State<ContractorVerification> {
                                             builder: (context) => ImageViewScreen(
                                                 // imageUrl:
                                                 //     "${'http://1803010.web.ti.polindra.ac.id/index.php/img/persyaratan/kontraktor/'}${profesional.files[0].file}")),
-                                                imageUrl:
-                                                    "${'${Generals.baseUrl}/img/persyaratan/kontraktor/'}${profesional.files[0].file}")),
+                                                imageUrl: "${'${Generals.baseUrl}/img/persyaratan/kontraktor/'}${profesional.files[0].file}")),
                                       );
                                     } else if (Generals.listFormatPdf
                                         .contains(ext)) {

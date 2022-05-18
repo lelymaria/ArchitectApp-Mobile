@@ -64,7 +64,8 @@ class DataConsultant {
     about = json['about'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
-    user = json['user'] != null ? new UserConsultant.fromJson(json['user']) : null;
+    user =
+        json['user'] != null ? new UserConsultant.fromJson(json['user']) : null;
     if (json['files'] != null) {
       files = new List<FilesConsultant>();
       json['files'].forEach((v) {
@@ -170,7 +171,8 @@ class FilesConsultant {
   String createdAt;
   String updatedAt;
 
-  FilesConsultant({this.id, this.konsultanId, this.file, this.createdAt, this.updatedAt});
+  FilesConsultant(
+      {this.id, this.konsultanId, this.file, this.createdAt, this.updatedAt});
 
   FilesConsultant.fromJson(Map<String, dynamic> json) {
     id = json['id'];
