@@ -41,7 +41,7 @@ class _FindServicesState extends State<FindServices> {
             _repository.getLelangOwner(_authPreference),
             _authPreference.getUserData()
           ]),
-          builder: (context, snapshot) {
+          builder: (context, AsyncSnapshot snapshot) {
             if (snapshot.hasData) {
               List<MyLelang> lelangs = snapshot.data[0];
               _user = snapshot.data[1];

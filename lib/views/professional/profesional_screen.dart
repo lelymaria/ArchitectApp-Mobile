@@ -21,7 +21,7 @@ class _ProfesionalScreenState extends State<ProfesionalScreen> {
       body: SafeArea(
         child: FutureBuilder(
             future: _repository.getConsultantFromOwner(_authPreference),
-            builder: (context, snapshot) {
+            builder: (context, AsyncSnapshot snapshot) {
               if (snapshot.hasData) {
                 List<DataConsultant> consultants = snapshot.data;
                 return Container(
