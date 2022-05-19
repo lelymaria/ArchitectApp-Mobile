@@ -26,7 +26,8 @@ class _ConsultanVerificationState extends State<ConsultanVerification> {
     Dimension().init(context);
     return FutureBuilder(
       future: _repository.getConsultant(_authPreference),
-      builder: (BuildContext context, AsyncSnapshot<List<DataConsultant>> snapshot) {
+      builder:
+          (BuildContext context, AsyncSnapshot<List<DataConsultant>> snapshot) {
         if (snapshot.hasError) {
           return Center(child: Text("Load data gagal"));
         } else if (snapshot.connectionState == ConnectionState.done) {
@@ -64,11 +65,13 @@ class _ConsultanVerificationState extends State<ConsultanVerification> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(profesional.user.email, style: blackFontStyle3),
+                                Text(profesional.user.email,
+                                    style: blackFontStyle3),
                                 SizedBox(height: 5),
                                 GestureDetector(
                                   onTap: () {
-                                    var ext = profesional.files[0].file.split(".")[1];
+                                    var ext =
+                                        profesional.files[0].file.split(".")[1];
                                     print(profesional.files[0].file);
                                     if (Generals.listFormatImage
                                         .contains(ext)) {
@@ -78,8 +81,7 @@ class _ConsultanVerificationState extends State<ConsultanVerification> {
                                             builder: (context) => ImageViewScreen(
                                                 // imageUrl:
                                                 //     "${'http://1803010.web.ti.polindra.ac.id/index.php/img/persyaratan/konsultan/'}${profesional.files[0].file}")),
-                                                imageUrl:
-                                                    "${'${Generals.baseUrl}/img/persyaratan/konsultan/'}${profesional.files[0].file}")),
+                                                imageUrl: "${'${Generals.baseUrl}/img/persyaratan/konsultan/'}${profesional.files[0].file}")),
                                       );
                                     } else if (Generals.listFormatPdf
                                         .contains(ext)) {

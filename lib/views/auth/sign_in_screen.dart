@@ -7,6 +7,7 @@ import 'package:architect_app/models/repositories/repository.dart';
 import 'package:architect_app/utils/dimension.dart';
 import 'package:architect_app/utils/validations.dart';
 import 'package:architect_app/views/auth/choose_role.dart';
+import 'package:architect_app/views/guest/guest_home.dart';
 import 'package:architect_app/views/main_page.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -51,6 +52,19 @@ class _SignInScreenState extends State<SignInScreen> {
     return Form(
       key: _formKey,
       child: Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            leading: IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => GuestHome(),
+                    ));
+              },
+              icon: Icon(Icons.close, color: Colors.black),
+            )),
         // key: scaffoldKey,
         body: BlocProvider<LoginBloc>(
           create: (BuildContext context) => _loginBloc = LoginBloc(

@@ -1,4 +1,5 @@
 import 'package:architect_app/models/preferences/auth_preference.dart';
+import 'package:architect_app/views/guest/guest_home.dart';
 import 'package:architect_app/views/main_page.dart';
 import 'package:architect_app/views/auth/sign_in_screen.dart';
 import 'package:flutter/material.dart';
@@ -34,15 +35,15 @@ class _MyAppState extends State<MyApp> {
       home: FutureBuilder(
         future: _authPreference.hasToken(),
         builder: (context, snapshot) {
+          print(" data ${snapshot.data}");
           if (snapshot.hasData) {
             if (snapshot.data == true) {
               return MainPage();
             } else {
-              return SignInScreen();
+              return GuestHome();
+              // return SignInScreen();
             }
-          } else {
-            return Scaffold();
-          }
+          } else {}
         },
       ),
     );

@@ -152,7 +152,7 @@ class _AllConsultanLelangDetailState extends State<AllConsultanLelangDetail> {
         ]),
         bottomNavigationBar:
         widget.project.projectOwn[0].hasil.length > 0 ?
-         SafeArea(
+        SafeArea(
           child: Container(
             height: 60,
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),

@@ -4,6 +4,8 @@ import 'package:architect_app/views/auth/profesional_sign_up.dart';
 import 'package:architect_app/views/auth/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'kontraktor_sign_up.dart';
+
 class ChooseRole extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -85,7 +87,34 @@ class ChooseRole extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => KontraktorSignUp()));
+                },
+                child: Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: Dimension.blockSizeVertical * 18,
+                          child: Image.asset('assets/images/architect.png'),
+                        ),
+                        SizedBox(height: Dimension.safeBlockVertical),
+                        Text(
+                          "Kontraktor",
+                          style: blackFontStyle2,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

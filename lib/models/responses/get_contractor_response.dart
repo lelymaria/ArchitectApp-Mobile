@@ -98,7 +98,7 @@ class User {
   String avatar;
   int isActive;
   String level;
-  Null fireBaseToken;
+  String fireBaseToken;
   Null lastLogin;
   String createdAt;
   String updatedAt;
