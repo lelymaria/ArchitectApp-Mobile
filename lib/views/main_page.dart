@@ -129,57 +129,57 @@ class _MainPageState extends State<MainPage> {
                     ? "konsultan"
                     : "admin");
             return Scaffold(
-                body: _buildContent(selectedPage, snapshot.data),
-                bottomNavigationBar: _user.level != "admin"
-                    ? BottomNavigationBar(
-                        items: [
-                          BottomNavigationBarItem(
-                              icon: _user.level == "admin"
-                                  ? Icon(Icons.verified_user)
-                                  : Icon(Icons.home),
-                              label: _user.level == "admin"
-                                  ? "Verifikasi"
-                                  : "Home"),
-                          BottomNavigationBarItem(
-                              icon: Icon(Icons.architecture),
-                              label: _user.level == "owner"
-                                  ? "Konsultan"
-                                  : "Project"),
-                          BottomNavigationBarItem(
-                              icon: Icon(Icons.message), label: "Pesan"),
-                          BottomNavigationBarItem(
-                              icon: Icon(Icons.person), label: "Profile"),
-                        ],
-                        currentIndex: selectedPage,
-                        onTap: (index) {
-                          setState(() {
-                            selectedPage = index;
-                          });
-                        },
-                        selectedItemColor: Colors.amber,
-                        unselectedItemColor: Colors.black45,
-                        showUnselectedLabels: true,
-                      )
-                    : BottomNavigationBar(
-                        items: [
-                          BottomNavigationBarItem(
-                              icon: Icon(Icons.verified_user),
-                              label: "Verifikasi"),
-                          BottomNavigationBarItem(
-                              icon: Icon(Icons.payments), label: "Pembayaran"),
-                          BottomNavigationBarItem(
-                              icon: Icon(Icons.person), label: "Profile"),
-                        ],
-                        currentIndex: selectedPage,
-                        onTap: (index) {
-                          setState(() {
-                            selectedPage = index;
-                          });
-                        },
-                        selectedItemColor: Colors.amber,
-                        unselectedItemColor: Colors.black45,
-                        showUnselectedLabels: true,
-                      ));
+              body: _buildContent(selectedPage, snapshot.data),
+              bottomNavigationBar: _user.level != "admin"
+                  ? BottomNavigationBar(
+                      items: [
+                        BottomNavigationBarItem(
+                            icon: _user.level == "admin"
+                                ? Icon(Icons.verified_user)
+                                : Icon(Icons.home),
+                            label:
+                                _user.level == "admin" ? "Verifikasi" : "Home"),
+                        BottomNavigationBarItem(
+                            icon: Icon(Icons.architecture),
+                            label: _user.level == "owner"
+                                ? "Konsultan"
+                                : "Project"),
+                        BottomNavigationBarItem(
+                            icon: Icon(Icons.message), label: "Pesan"),
+                        BottomNavigationBarItem(
+                            icon: Icon(Icons.person), label: "Profile"),
+                      ],
+                      currentIndex: selectedPage,
+                      onTap: (index) {
+                        setState(() {
+                          selectedPage = index;
+                        });
+                      },
+                      selectedItemColor: Colors.amber,
+                      unselectedItemColor: Colors.black45,
+                      showUnselectedLabels: true,
+                    )
+                  : BottomNavigationBar(
+                      items: [
+                        BottomNavigationBarItem(
+                            icon: Icon(Icons.verified_user),
+                            label: "Verifikasi"),
+                        BottomNavigationBarItem(
+                            icon: Icon(Icons.payments), label: "Pembayaran"),
+                        BottomNavigationBarItem(
+                            icon: Icon(Icons.person), label: "Profile"),
+                      ],
+                      currentIndex: selectedPage,
+                      onTap: (index) {
+                        setState(() {
+                          selectedPage = index;
+                        });
+                      },
+                      selectedItemColor: Colors.amber,
+                      unselectedItemColor: Colors.black45,
+                      showUnselectedLabels: true,
+                    ),
+            );
           } else {
             return Scaffold();
           }
