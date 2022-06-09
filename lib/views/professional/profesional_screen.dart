@@ -22,6 +22,7 @@ class _ProfesionalScreenState extends State<ProfesionalScreen> {
         child: FutureBuilder(
             future: _repository.getConsultantFromOwner(_authPreference),
             builder: (context, AsyncSnapshot snapshot) {
+              // print(snapshot.data);
               if (snapshot.hasData) {
                 List<DataConsultant> consultants = snapshot.data;
                 return Container(

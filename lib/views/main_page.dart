@@ -5,7 +5,9 @@ import 'package:architect_app/views/admin/consultant_verification.dart';
 import 'package:architect_app/views/admin/payment_verification.dart';
 import 'package:architect_app/views/admin/profesional_verification.dart';
 import 'package:architect_app/views/chat/listchat_screen.dart';
+import 'package:architect_app/views/contractor/contractor_cabang.dart';
 import 'package:architect_app/views/contractor/contractor_project.dart';
+import 'package:architect_app/views/contractor/contractor_screen.dart';
 import 'package:architect_app/views/contractor/find_profesional.dart';
 import 'package:architect_app/views/home/home_screen.dart';
 import 'package:architect_app/views/professional/consultant_projects.dart';
@@ -36,7 +38,7 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 class MainPage extends StatefulWidget {
   final int initialPage;
 
-  MainPage({this.initialPage = 0});
+  MainPage({this.initialPage = 2});
 
   @override
   _MainPageState createState() => _MainPageState();
@@ -133,19 +135,25 @@ class _MainPageState extends State<MainPage> {
               bottomNavigationBar: _user.level != "admin"
                   ? BottomNavigationBar(
                       items: [
-                        BottomNavigationBarItem(
-                            icon: _user.level == "admin"
-                                ? Icon(Icons.verified_user)
-                                : Icon(Icons.home),
-                            label:
-                                _user.level == "admin" ? "Verifikasi" : "Home"),
+                       
                         BottomNavigationBarItem(
                             icon: Icon(Icons.architecture),
                             label: _user.level == "owner"
                                 ? "Konsultan"
                                 : "Project"),
                         BottomNavigationBarItem(
-                            icon: Icon(Icons.message), label: "Pesan"),
+                            icon: Icon(Icons.construction),
+                            label: _user.level == "owner"
+                                ? "Kontraktor"
+                                : "Project"),
+                         BottomNavigationBarItem(
+                            icon: _user.level == "admin"
+                                ? Icon(Icons.verified_user)
+                                : Icon(Icons.home),
+                            label:
+                                _user.level == "admin" ? "Verifikasi" : "Home"),
+                        BottomNavigationBarItem(
+                            icon: Icon(Icons.message), label: "Chat"),
                         BottomNavigationBarItem(
                             icon: Icon(Icons.person), label: "Profile"),
                       ],
@@ -200,21 +208,28 @@ class _MainPageState extends State<MainPage> {
       }
     } else {
       switch (index) {
+        
         case 0:
-          return user.level == "owner"
-              ? HomeScreen()
-              : user.level == "konsultan"
-                  ? FindServices()
-                  : FindProfesional();
-        case 1:
           return user.level == "owner"
               ? ProfesionalScreen()
               : user.level == "konsultan"
                   ? ConsultanProjects()
                   : ContractorProject();
+        case 1:
+          return user.level == "owner"
+              ? ContractorScreen()
+              : user.level == "kontraktor"
+                  ? ContractorCabangs()
+                  : ContractorProject();
         case 2:
-          return ListChatScreen();
+          return user.level == "owner"
+              ? HomeScreen()
+              : user.level == "konsultan"
+                  ? FindServices()
+                  : FindProfesional();
         case 3:
+          return ListChatScreen();
+        case 4:
           return ProfileScreen();
         default:
           return user.level == "owner"

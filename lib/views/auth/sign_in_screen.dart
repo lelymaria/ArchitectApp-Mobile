@@ -140,15 +140,18 @@ class _SignInScreenState extends State<SignInScreen> {
   }
 
   Widget _buildContent(BuildContext context) {
+    
     Dimension().init(context);
     return Center(
       child: ListView(
         shrinkWrap: true,
         children: [
+          
           Container(
             padding: EdgeInsets.symmetric(horizontal: 24),
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              // Image.asset('assets/images/logo_proyek.png'),
               Text(
                 "Masuk",
                 style: blackFontStyle3.copyWith(fontSize: 24),

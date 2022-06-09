@@ -15,6 +15,7 @@ import 'package:architect_app/models/preferences/auth_preference.dart';
 import 'package:architect_app/models/responses/change_password_response.dart';
 import 'package:architect_app/models/responses/choose_project_response.dart';
 import 'package:architect_app/models/responses/choose_proposal.dart';
+import 'package:architect_app/models/responses/get_cabangs_response.dart';
 // import 'package:architect_app/models/responses/edit_profile_response.dart';
 import 'package:architect_app/models/responses/get_consultant_response.dart';
 import 'package:architect_app/models/responses/get_contractor_response.dart';
@@ -31,11 +32,10 @@ class Repository {
   final String baseUrl = "http://192.168.42.231:8000/api";
   // final String baseUrl = "http://127.0.0.1:8888/api";
   // final String baseUrl = "http://192.168.43.170:8000/api";
-<<<<<<< HEAD
+
   // final String baseUrl = "http://192.168.100.75:8000/api";
-=======
-  final String baseUrl = "http://192.168.123.58:8000/api";
->>>>>>> 0cec7e144a8b71645fec05d1b54967f169c84c5f
+
+  // final String baseUrl = "http://192.168.123.58:8000/api";
   // final String baseUrl = "http://192.168.43.163:8000/api";
 
   Future<LoginResponse> postLogin(LoginForm loginData) async {
@@ -785,6 +785,42 @@ class Repository {
       return data;
     } else {
       return data;
+    }
+  }
+
+  Future<List<DataContractor>> getContractorFromOwner(
+      AuthPreference authPreference) async {
+    String token = await authPreference.getToken();
+    final response = await http
+        .get(Uri.parse("$baseUrl/owner/allkontraktor"),
+            headers: await HttpHeaders.headers(token: token))
+        .timeout(Duration(seconds: 120));
+
+    final data = jsonDecode(response.body);
+    // print(data);
+    GetContractorResponse record = GetContractorResponse.fromJson(data);
+
+    if (response.statusCode == 200) {
+      return record.data;
+    } else {
+      return record.data;
+    }
+  }
+
+  Future<List<Cabang>> getCabangs(AuthPreference authPreference) async {
+    String token = await authPreference.getToken();
+    final response = await http
+        .get(Uri.parse("$baseUrl/owner/allcabang"),
+            headers: await HttpHeaders.headers(token: token))
+        .timeout(Duration(seconds: 120));
+
+    final data = jsonDecode(response.body);
+    GetCabangResponse record = GetCabangResponse.fromJson(data);
+
+    if (response.statusCode == 200) {
+      return record.data;
+    } else {
+      return record.data;
     }
   }
 }
