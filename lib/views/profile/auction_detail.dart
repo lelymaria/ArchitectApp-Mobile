@@ -159,7 +159,7 @@ class _AuctionDetailState extends State<AuctionDetail> {
               ],
             ),
             SizedBox(height: 15),
-            if (widget.lelang.image.length > 0)
+            if (widget.lelang.image.length >= 0)
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -177,7 +177,7 @@ class _AuctionDetailState extends State<AuctionDetail> {
                             MaterialPageRoute(
                                 builder: (context) => ImageViewScreen(
                                     imageUrl:
-                                        "${'${Generals.baseUrl}/img/lelang/tkp/'}${widget.lelang.image[index].image}")),
+                                        "${'${Generals.baseUrl}/img/lelang/ruangan/'}${widget.lelang.image[index].image}")),
                           );
                         },
                         child: Container(
@@ -185,7 +185,7 @@ class _AuctionDetailState extends State<AuctionDetail> {
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: NetworkImage(
-                                      "${'${Generals.baseUrl}/img/lelang/tkp/'}${widget.lelang.image[index].image}"),
+                                      "${'${Generals.baseUrl}/img/lelang/ruangan/'}${widget.lelang.image[index].image}"),
                                   fit: BoxFit.cover)),
                         ),
                       );
@@ -213,7 +213,7 @@ class _AuctionDetailState extends State<AuctionDetail> {
                             MaterialPageRoute(
                                 builder: (context) => ImageViewScreen(
                                     imageUrl:
-                                        "${'${Generals.baseUrl}/img/lelang/tkp/'}${widget.lelang.inspirasi[index].inspirasi}")),
+                                        "${'${Generals.baseUrl}/img/lelang/ruangan/'}${widget.lelang.inspirasi[index].inspirasi}")),
                           );
                         },
                         child: Container(
@@ -221,7 +221,7 @@ class _AuctionDetailState extends State<AuctionDetail> {
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: NetworkImage(
-                                      "${'${Generals.baseUrl}/img/lelang/tkp/'}${widget.lelang.inspirasi[index].inspirasi}"),
+                                      "${'${Generals.baseUrl}/img/lelang/ruangan/'}${widget.lelang.inspirasi[index].inspirasi}"),
                                   fit: BoxFit.cover)),
                         ),
                       );

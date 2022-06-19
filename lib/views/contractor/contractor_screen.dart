@@ -25,8 +25,10 @@ class _ContractorScreenState extends State<ContractorScreen> {
             future: _repository.getContractorFromOwner(_authPreference),
             builder: (context, AsyncSnapshot snapshot) {
               print(snapshot.data);
+              print(snapshot.hasData);
               // print(snapshot.data.length);
               if (snapshot.hasData) {
+                // print(snapshot.hasData);
                 List<DataContractor> contractors = snapshot.data;
                 return Container(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
@@ -67,7 +69,9 @@ class _ContractorScreenState extends State<ContractorScreen> {
                 //   },),
                 // );
               } else {
-                return Center(child: loadingIndicator);
+                return Center(child: Card(
+                  child: Text("Sedang Dalam Tahap Maintenance"),
+                ),);
               }
             }),
       ),

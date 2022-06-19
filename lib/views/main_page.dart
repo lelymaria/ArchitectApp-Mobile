@@ -139,12 +139,12 @@ class _MainPageState extends State<MainPage> {
                         BottomNavigationBarItem(
                             icon: Icon(Icons.architecture),
                             label: _user.level == "owner"
-                                ? "Konsultan"
+                                ? "Pro"
                                 : "Project"),
                         BottomNavigationBarItem(
                             icon: Icon(Icons.construction),
                             label: _user.level == "owner"
-                                ? "Kontraktor"
+                                ? "Kontrak"
                                 : "Project"),
                          BottomNavigationBarItem(
                             icon: _user.level == "admin"

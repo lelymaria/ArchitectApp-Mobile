@@ -253,16 +253,16 @@ class FilesContractor {
 //   }
 // }
 
-class Images {
+class ImagesContractor {
   int id;
   int cabangKontraktorId;
   String image;
   String createdAt;
   String updatedAt;
 
-  Images({this.id, this.cabangKontraktorId, this.image, this.createdAt, this.updatedAt});
+  ImagesContractor({this.id, this.cabangKontraktorId, this.image, this.createdAt, this.updatedAt});
 
-  Images.fromJson(Map<String, dynamic> json) {
+  ImagesContractor.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     cabangKontraktorId = json['cabangKontraktorId'];
     image = json['image'];

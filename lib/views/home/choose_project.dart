@@ -319,7 +319,7 @@ class _ChooseProjectState extends State<ChooseProject> {
             isLoading = false;
           });
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => ProjectsOwner()));
+          MaterialPageRoute(builder: (context) => ProjectsOwner()));
           WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
             Flushbar(
               flushbarStyle: FlushbarStyle.FLOATING,
@@ -338,11 +338,13 @@ class _ChooseProjectState extends State<ChooseProject> {
           setState(() {
             isLoading = false;
           });
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => ProjectsOwner()));
           Flushbar(
             flushbarStyle: FlushbarStyle.FLOATING,
             flushbarPosition: FlushbarPosition.TOP,
-            backgroundColor: Colors.red,
-            message: "Gagal membeli desain",
+            backgroundColor: Colors.green,
+            message: "Berhasil Memilih Desain",
             icon: Icon(
               FontAwesomeIcons.infoCircle,
               size: 28.0,

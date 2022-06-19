@@ -43,7 +43,7 @@ class Cabang {
   String updatedAt;
   List<Images> images;
   Kontraktor kontraktor;
-  // List<CabangOwn> cabangOwn;
+  List<CabangOwn> cabangOwn;
 
   Cabang(
       {this.id,
@@ -58,8 +58,8 @@ class Cabang {
       this.createdAt,
       this.updatedAt,
       this.images,
-      this.kontraktor});
-      // this.cabangOwn});
+      this.kontraktor,
+      this.cabangOwn});
 
   Cabang.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -82,12 +82,12 @@ class Cabang {
     kontraktor = json['kontraktor'] != null
         ? new Kontraktor.fromJson(json['kontraktor'])
         : null;
-    // if (json['Cabang_own'] != null) {
-    //   // cabangOwn = new List<CabangOwn>();
-    //   json['Cabang_own'].forEach((v) {
-        // cabangOwn.add(new CabangOwn.fromJson(v));
-    //   });
-    // }
+    if (json['cabang_own'] != null) {
+      // cabangOwn = new List<CabangOwn>();
+      json['cabang_own'].forEach((v) {
+        cabangOwn.add(new CabangOwn.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {
@@ -106,9 +106,9 @@ class Cabang {
     if (this.kontraktor != null) {
       data['kontraktor'] = this.kontraktor.toJson();
     }
-    // if (this.cabangOwn != null) {
-    //   data['cabang_own'] = this.cabangOwn.map((v) => v.toJson()).toList();
-    // }
+    if (this.cabangOwn != null) {
+      data['cabang_own'] = this.cabangOwn.map((v) => v.toJson()).toList();
+    }
     return data;
   }
 }
@@ -192,69 +192,69 @@ class Kontraktor {
   }
 }
 
-// class CabangOwn {
-//   int id;
-//   int ownerId;
-//   int cabangId;
-//   String hasilRab;
-//   String createdAt;
-//   String updatedAt;
-//   Ratings ratings;
-//   OwnerCabangs owner;
-//   // List<Hasil> hasil;
+class CabangOwn {
+  int id;
+  int ownerId;
+  int konstruksiId;
+  String konfirmasi;
+  String createdAt;
+  String updatedAt;
+  // Ratings ratings;
+  OwnerCabangs owner;
+  // List<Hasil> hasil;
 
-//   CabangOwn(
-//       {this.id,
-//       this.ownerId,
-//       this.cabangId,
-//       this.hasilRab,
-//       this.createdAt,
-//       this.updatedAt,
-//       this.ratings,
-//       this.owner,
-//       // this.hasil
-//       });
+  CabangOwn(
+      {this.id,
+      this.ownerId,
+      this.konstruksiId,
+      this.konfirmasi,
+      this.createdAt,
+      this.updatedAt,
+      // this.ratings,
+      this.owner,
+      // this.hasil
+      });
 
-//   CabangOwn.fromJson(Map<String, dynamic> json) {
-//     id = json['id'];
-//     ownerId = json['ownerId'];
-//     cabangId = json['cabangId'];
-//     hasilRab = json['hasil_rab'];
-//     createdAt = json['created_at'];
-//     updatedAt = json['updated_at'];
-//     ratings =
-//         json['ratings'] != null ? new Ratings.fromJson(json['ratings']) : null;
-//     owner = json['owner'] != null
-//         ? new OwnerCabangs.fromJson(json['owner'])
-//         : null;
-//     // if (json['hasil'] != null) {
-//     //   hasil = new List<Hasil>();
-//     //   json['hasil'].forEach((v) {
-//     //     hasil.add(new Hasil.fromJson(v));
-//     //   });
-//     // }
-//   }
+  CabangOwn.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    ownerId = json['ownerId'];
+    konstruksiId = json['konstruksiId'];
+    konfirmasi = json['konfirmasi'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
+    // ratings =
+    //     json['ratings'] != null ? new Ratings.fromJson(json['ratings']) : null;
+    owner = json['owner'] != null
+        ? new OwnerCabangs.fromJson(json['owner'])
+        : null;
+    // if (json['hasil'] != null) {
+    //   hasil = new List<Hasil>();
+    //   json['hasil'].forEach((v) {
+    //     hasil.add(new Hasil.fromJson(v));
+    //   });
+    // }
+  }
 
-//   Map<String, dynamic> toJson() {
-//     final Map<String, dynamic> data = new Map<String, dynamic>();
-//     data['id'] = this.id;
-//     data['ownerId'] = this.ownerId;
-//     data['cabangId'] = this.cabangId;
-//     data['hasil_rab'] = this.hasilRab;
-//     data['created_at'] = this.createdAt;
-//     data['updated_at'] = this.updatedAt;
-//     if (this.ratings != null) {
-//       data['ratings'] = this.ratings.toJson();
-//     }
-//     if (this.owner != null) {
-//       data['owner'] = this.owner.toJson();
-//     }
-//     // if (this.hasil != null) {
-//     //   data['hasil'] = this.hasil.map((v) => v.toJson()).toList();
-//     // }
-//     return data;
-//   }
-// }
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['ownerId'] = this.ownerId;
+    data['konstruksiId'] = this.konstruksiId;
+    data['konfirmasi'] = this.konfirmasi;
+    data['created_at'] = this.createdAt;
+    data['updated_at'] = this.updatedAt;
+    // if (this.ratings != null) {
+    //   data['ratings'] = this.ratings.toJson();
+    // }
+    if (this.owner != null) {
+      data['owner'] = this.owner.toJson();
+    }
+    // if (this.hasil != null) {
+    //   data['hasil'] = this.hasil.map((v) => v.toJson()).toList();
+    // }
+    return data;
+  }
+}
 
 // class Ratings {
 //   int id;
@@ -289,45 +289,45 @@ class Kontraktor {
 //   }
 // }
 
-// class OwnerCabangs {
-//   int id;
-//   int userId;
-//   String telepon;
-//   String alamat;
-//   String createdAt;
-//   String updatedAt;
-//   User user;
+class OwnerCabangs {
+  int id;
+  int userId;
+  String telepon;
+  String alamat;
+  String createdAt;
+  String updatedAt;
+  User user;
 
-//   OwnerCabangs(
-//       {this.id,
-//       this.userId,
-//       this.telepon,
-//       this.alamat,
-//       this.createdAt,
-//       this.updatedAt,
-//       this.user});
+  OwnerCabangs(
+      {this.id,
+      this.userId,
+      this.telepon,
+      this.alamat,
+      this.createdAt,
+      this.updatedAt,
+      this.user});
 
-//   OwnerCabangs.fromJson(Map<String, dynamic> json) {
-//     id = json['id'];
-//     userId = json['userId'];
-//     telepon = json['telepon'];
-//     alamat = json['alamat'];
-//     createdAt = json['created_at'];
-//     updatedAt = json['updated_at'];
-//     user = json['user'] != null ? new User.fromJson(json['user']) : null;
-//   }
+  OwnerCabangs.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    userId = json['userId'];
+    telepon = json['telepon'];
+    alamat = json['alamat'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
+    user = json['user'] != null ? new User.fromJson(json['user']) : null;
+  }
 
-//   Map<String, dynamic> toJson() {
-//     final Map<String, dynamic> data = new Map<String, dynamic>();
-//     data['id'] = this.id;
-//     data['userId'] = this.userId;
-//     data['telepon'] = this.telepon;
-//     data['alamat'] = this.alamat;
-//     data['created_at'] = this.createdAt;
-//     data['updated_at'] = this.updatedAt;
-//     if (this.user != null) {
-//       data['user'] = this.user.toJson();
-//     }
-//     return data;
-//   }
-// }
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['userId'] = this.userId;
+    data['telepon'] = this.telepon;
+    data['alamat'] = this.alamat;
+    data['created_at'] = this.createdAt;
+    data['updated_at'] = this.updatedAt;
+    if (this.user != null) {
+      data['user'] = this.user.toJson();
+    }
+    return data;
+  }
+}

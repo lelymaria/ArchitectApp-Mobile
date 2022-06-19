@@ -445,8 +445,9 @@ class _ProjectOwnerDetailState extends State<ProjectOwnerDetail> {
                                     TextStyle(color: Colors.red, fontSize: 12)),
                           SizedBox(height: 5),
                           Text(
-                              "*silahkan melakukan transfer ke rekening BNI 0834577298 a.n Alvin Fernanda",
+                              "*silahkan melakukan transfer ke rekening BRI 088222155847 a.n Eko Permana",
                               style: blackFontStyle1),
+                              // 0834577298
                         ],
                       ),
                     widget.project['choose_project'] == null

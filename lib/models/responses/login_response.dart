@@ -217,6 +217,7 @@ class Kontraktor {
   int id;
   int userId;
   String telepon;
+  String alamat;
   String website;
   String instagram;
   String about;
@@ -227,6 +228,7 @@ class Kontraktor {
       {this.id,
       this.userId,
       this.telepon,
+      this.alamat,
       this.website,
       this.instagram,
       this.about,
