@@ -44,7 +44,7 @@ class _ProfileScreenGuestState extends State<ProfileScreenGuest> {
                         ));
                       },
                       style: ElevatedButton.styleFrom(primary: Colors.amber),
-                      child: Text("Masuk")),
+                      child: Text("Login")),
                 ],
               ),
             ),

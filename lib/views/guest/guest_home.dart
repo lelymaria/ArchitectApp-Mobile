@@ -19,7 +19,7 @@ class _GuestHomeState extends State<GuestHome> {
         bottomNavigationBar: BottomNavigationBar(
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.architecture), label: "Profesional"),
+            // BottomNavigationBarItem(icon: Icon(Icons.architecture), label: "Profesional"),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           ],
           currentIndex: selectedPage,
@@ -40,9 +40,9 @@ Widget _buildContent(int selectedPage) {
   switch (selectedPage) {
     case 0:
       return HomeScreenGuest();
+    // case 1:
+    //   return ProfesionalScreenGuest();
     case 1:
-      return ProfesionalScreenGuest();
-    case 2:
       return ProfileScreenGuest();
     default:
       return HomeScreenGuest();

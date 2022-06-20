@@ -19,8 +19,8 @@ class Generals {
   // android download storage
   static String downloadStorage = '/storage/emulated/0/Download';
 
-  // static String baseUrl = "http://192.168.100.75:8000";
-  static String baseUrl = "http://192.168.42.231:8000";
+  // static String baseUrl = "http://192.168.42.231:8000";
+  static String baseUrl = "http://arsitekco.proyek.ti.polindra.ac.id/public";
   // static String baseUrl = "http://10.0.2.2:8000";
   // static String baseUrl = "http://1803010.web.ti.polindra.ac.id";
 

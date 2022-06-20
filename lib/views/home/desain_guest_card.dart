@@ -2,19 +2,20 @@ import 'package:architect_app/constants/theme.dart';
 import 'package:architect_app/models/responses/get_projects_response.dart';
 import 'package:architect_app/utils/generals.dart';
 import 'package:architect_app/views/home/desain_detail.dart';
+import 'package:architect_app/views/home/desain_guest_detail.dart';
 import 'package:architect_app/widgets/rating.dart';
 import 'package:flutter/material.dart';
 
-class DesainCard extends StatelessWidget {
+class DesainGuestCard extends StatelessWidget {
   final Project project;
   final double height;
 
-  const DesainCard({@required this.project, this.height, Key key})
+  const DesainGuestCard({@required this.project, this.height, Key key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    int lengthRating = project.projectOwn.where((element) => element.ratings != null).length ?? null;
+    // int lengthRating = project.projectOwn.where((element) => element.ratings != null).length ?? null;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -23,7 +24,7 @@ class DesainCard extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => DesainDetail(
+                    builder: (context) => DesainGuestDetail(
                           project: project,
                         )));
           },
@@ -63,50 +64,11 @@ class DesainCard extends StatelessWidget {
           project.konsultan.user.name,
           style: blackFontStyle1.copyWith(fontSize: 12),
         ),
-        if (project.projectOwn.length > 0 &&
-            lengthRating > 0)
-          _rating()
+        // if (project.projectOwn.length > 0 &&
+        //     lengthRating > 0)
+        //   _rating()
       ],
     );
   }
 
-  _rating() {
-    var nilai = 0;
-    int lengthRating = project.projectOwn.where((element) => element.ratings != null).length ?? null;
-    project.projectOwn.where((element) => element.ratings != null).forEach((e) {
-        nilai += e.ratings.rating;
-    });
-    double nilairata = nilai / lengthRating;
-    int average = nilairata.toInt();
-    return Row(
-      children: [
-        Rating(average),
-        Text(" $average ($lengthRating)", style: blackFontStyle1.copyWith(fontSize: 12))
-      ],
-    );
-  }
-
-//   Widget buildInfo(BuildContext context) => Container(
-//         margin: EdgeInsets.symmetric(horizontal: 8),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             SizedBox(height: 4),
-//             Text(
-//               project.title,
-//               style: blackFontStyle2,
-//               maxLines: 2,
-//               overflow: TextOverflow.ellipsis,
-//             ),
-//             // SizedBox(height: 4),
-//             Text(
-//               project.konsultan.user.name,
-//               style: blackFontStyle1.copyWith(fontSize: 12),
-//             ),
-//             if (project.projectOwn.length > 0 &&
-//                 project.projectOwn[0].ratings != null)
-//               Rating(average)
-//           ],
-//         ),
-//       );
 }

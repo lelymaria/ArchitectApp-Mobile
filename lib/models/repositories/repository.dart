@@ -20,6 +20,7 @@ import 'package:architect_app/models/responses/get_cabangs_response.dart';
 import 'package:architect_app/models/responses/get_consultant_response.dart';
 import 'package:architect_app/models/responses/get_contractor_response.dart';
 import 'package:architect_app/models/responses/get_mylelang_response.dart';
+import 'package:architect_app/models/responses/get_project_guest.dart';
 // import 'package:architect_app/models/responses/get_myproject_response.dart';
 import 'package:architect_app/models/responses/get_projects_response.dart';
 import 'package:architect_app/models/responses/get_proposal_response.dart';
@@ -28,8 +29,8 @@ import 'package:architect_app/utils/http_headers.dart';
 import 'package:http/http.dart' as http;
 
 class Repository {
-  // final String baseUrl = "http://1803010.web.ti.polindra.ac.id/index.php/api";
-  final String baseUrl = "http://192.168.42.231:8000/api";
+  final String baseUrl = "http://arsitekco.proyek.ti.polindra.ac.id/api";
+  // final String baseUrl = "http://192.168.42.231:8000/api";
   // final String baseUrl = "http://127.0.0.1:8888/api";
   // final String baseUrl = "http://192.168.43.170:8000/api";
 
@@ -112,6 +113,43 @@ class Repository {
       return data;
     } else {
       return data;
+    }
+  }
+
+  Future<List<Project>> getProject() async {
+    // String token = await authPreference.getToken();
+    final response = await http
+        .get(Uri.parse("$baseUrl/project"),
+        )
+        .timeout(Duration(seconds: 120));
+print("getProjek ${response.statusCode}");
+    final data = jsonDecode(response.body);
+    print(data);
+    GetProjectResponse record = GetProjectResponse.fromJson(data);
+
+    if (response.statusCode == 200) {
+      return record.data;
+    } else {
+      return record.data;
+    }
+  }
+
+  Future<List<DataConsultant>> getConsultantFromGuest() async {
+    // String token = await authPreference.getToken();
+    final response = await http
+        .get(Uri.parse("$baseUrl/all-konsultan"),
+            // headers: await HttpHeaders.headers(token: token)
+            )
+        .timeout(Duration(seconds: 120));
+    print("Konsul ${response.statusCode}");
+    final data = jsonDecode(response.body);
+    print(data);
+    GetConsultantResponse record = GetConsultantResponse.fromJson(data);
+
+    if (response.statusCode == 200) {
+      return record.data;
+    } else {
+      return record.data;
     }
   }
 
@@ -209,6 +247,7 @@ class Repository {
       return record.data;
     }
   }
+
 
   Future<List<DataConsultant>> getConsultantFromOwner(
       AuthPreference authPreference) async {
