@@ -145,13 +145,22 @@ class _CabangDetailState extends State<CabangDetail> {
                   style: blackFontStyle1,
                 ),
                 SizedBox(height: 20),
+                Text(
+                        "Alamat",
+                        style: blackFontStyle3,
+                      ),
+                Text(
+                  widget.cabang.alamatCabang,
+                  style: blackFontStyle1,
+                ),
+                SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(
                       flex: 1,
                       child: Text(
-                        "Jumlah Anggota",
+                        "Jumlah Teamwork",
                         style: blackFontStyle1,
                       ),
                     ),
@@ -171,7 +180,7 @@ class _CabangDetailState extends State<CabangDetail> {
                     Expanded(
                       flex: 1,
                       child: Text(
-                        "Harga Desain",
+                        "Harga Kontrak",
                         style: blackFontStyle1,
                       ),
                     ),
