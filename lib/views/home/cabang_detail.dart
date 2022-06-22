@@ -151,7 +151,7 @@ class _CabangDetailState extends State<CabangDetail> {
                     Expanded(
                       flex: 1,
                       child: Text(
-                        "Gaya Desain",
+                        "Jumlah Anggota",
                         style: blackFontStyle1,
                       ),
                     ),

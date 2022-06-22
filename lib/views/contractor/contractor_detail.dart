@@ -217,90 +217,90 @@ class _ContractorDetailState extends State<ContractorDetail> {
                             ),
                             if (listCabang.length > 0)
                               Column(
-                                children: [
-                                  SizedBox(
-                                      height: Dimension.safeBlockVertical * 2),
-                                  Container(
-                                    // padding: EdgeInsets.symmetric(
-                                    //     horizontal:
-                                    //         Dimension.safeBlockHorizontal * 4),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text("${listCabang.length} Cabang"),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: Dimension.safeBlockVertical),
-                                  Container(
-                                    width: double.infinity,
-                                    height: Dimension.blockSizeVertical * 25,
-                                    // padding: EdgeInsets.symmetric(
-                                    //     horizontal:
-                                    //         Dimension.safeBlockHorizontal * 3),
-                                    child: ListView.builder(
-                                        scrollDirection: Axis.horizontal,
-                                        itemCount: listCabang.length,
-                                        itemBuilder: (context, index) {
-                                          Cabang cabang =
-                                              listCabang.toList()[index];
-                                          return GestureDetector(
-                                            onTap: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          ContractorCabangDetail(
-                                                            cabang: cabang,
-                                                          )));
-                                            },
-                                            child: Card(
-                                              clipBehavior: Clip.antiAlias,
-                                              child: Container(
-                                                width: Dimension
-                                                        .blockSizeHorizontal *
-                                                    48,
-                                                padding: EdgeInsets.all(10),
-                                                child: Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text(cabang.namaTim,
-                                                        maxLines: 2,
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
-                                                        style: blackFontStyle3),
-                                                    // SizedBox(
-                                                    //     height: Dimension
-                                                    //         .safeBlockVertical),
-                                                    // if (cabang.cabangOwn[0]
-                                                    //         .ratings !=
-                                                    //     null)
-                                                    //   Rating(cabang
-                                                    //       .cabangOwn[0]
-                                                    //       .ratings
-                                                    //       .rating),
-                                                    SizedBox(
-                                                        height: Dimension
-                                                            .safeBlockVertical),
-                                                    Text(cabang.description,
-                                                        maxLines: 3,
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
-                                                        style: blackFontStyle1
-                                                            .copyWith(
-                                                                fontSize: Dimension
-                                                                        .safeBlockHorizontal *
-                                                                    3)),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }),
-                                  ),
-                                ],
+                                // children: [
+                                //   SizedBox(
+                                //       height: Dimension.safeBlockVertical * 2),
+                                //   Container(
+                                //     // padding: EdgeInsets.symmetric(
+                                //     //     horizontal:
+                                //     //         Dimension.safeBlockHorizontal * 4),
+                                //     child: Row(
+                                //       mainAxisAlignment:
+                                //           MainAxisAlignment.spaceBetween,
+                                //       children: [
+                                //         Text("${listCabang.length} Cabang"),
+                                //       ],
+                                //     ),
+                                //   ),
+                                //   SizedBox(height: Dimension.safeBlockVertical),
+                                  // Container(
+                                  //   width: double.infinity,
+                                  //   height: Dimension.blockSizeVertical * 25,
+                                  //   // padding: EdgeInsets.symmetric(
+                                  //   //     horizontal:
+                                  //   //         Dimension.safeBlockHorizontal * 3),
+                                  //   child: ListView.builder(
+                                  //       scrollDirection: Axis.horizontal,
+                                  //       itemCount: listCabang.length,
+                                  //       itemBuilder: (context, index) {
+                                  //         Cabang cabang =
+                                  //             listCabang.toList()[index];
+                                  //         return GestureDetector(
+                                  //           onTap: () {
+                                  //             Navigator.push(
+                                  //                 context,
+                                  //                 MaterialPageRoute(
+                                  //                     builder: (context) =>
+                                  //                         ContractorCabangDetail(
+                                  //                           cabang: cabang,
+                                  //                         )));
+                                  //           },
+                                  //           child: Card(
+                                  //             clipBehavior: Clip.antiAlias,
+                                  //             child: Container(
+                                  //               width: Dimension
+                                  //                       .blockSizeHorizontal *
+                                  //                   48,
+                                  //               padding: EdgeInsets.all(10),
+                                  //               child: Column(
+                                  //                 crossAxisAlignment:
+                                  //                     CrossAxisAlignment.start,
+                                  //                 children: [
+                                  //                   Text(cabang.namaTim,
+                                  //                       maxLines: 2,
+                                  //                       overflow: TextOverflow
+                                  //                           .ellipsis,
+                                  //                       style: blackFontStyle3),
+                                  //                   // SizedBox(
+                                  //                   //     height: Dimension
+                                  //                   //         .safeBlockVertical),
+                                  //                   // if (cabang.cabangOwn[0]
+                                  //                   //         .ratings !=
+                                  //                   //     null)
+                                  //                   //   Rating(cabang
+                                  //                   //       .cabangOwn[0]
+                                  //                   //       .ratings
+                                  //                   //       .rating),
+                                  //                   SizedBox(
+                                  //                       height: Dimension
+                                  //                           .safeBlockVertical),
+                                  //                   Text(cabang.description,
+                                  //                       maxLines: 3,
+                                  //                       overflow: TextOverflow
+                                  //                           .ellipsis,
+                                  //                       style: blackFontStyle1
+                                  //                           .copyWith(
+                                  //                               fontSize: Dimension
+                                  //                                       .safeBlockHorizontal *
+                                  //                                   3)),
+                                  //                 ],
+                                  //               ),
+                                  //             ),
+                                  //           ),
+                                  //         );
+                                  //       }),
+                                  // ),
+                                // ],
                               )
                           ],
                         ),
