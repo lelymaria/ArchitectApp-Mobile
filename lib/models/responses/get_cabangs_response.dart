@@ -63,7 +63,7 @@ class Cabang {
 
   Cabang.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    kontraktor = json['kontraktorId'];
+    kontraktorId = json['kontraktorId'];
     namaTim = json['nama_tim'];
     slug = json['slug'];
     description = json['description'];
@@ -120,7 +120,12 @@ class Images {
   String createdAt;
   String updatedAt;
 
-  Images({this.id, this.cabangKontraktorId, this.image, this.createdAt, this.updatedAt});
+  Images(
+      {this.id,
+      this.cabangKontraktorId,
+      this.image,
+      this.createdAt,
+      this.updatedAt});
 
   Images.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -203,17 +208,17 @@ class CabangOwn {
   OwnerCabangs owner;
   // List<Hasil> hasil;
 
-  CabangOwn(
-      {this.id,
-      this.ownerId,
-      this.konstruksiId,
-      this.konfirmasi,
-      this.createdAt,
-      this.updatedAt,
-      // this.ratings,
-      this.owner,
-      // this.hasil
-      });
+  CabangOwn({
+    this.id,
+    this.ownerId,
+    this.konstruksiId,
+    this.konfirmasi,
+    this.createdAt,
+    this.updatedAt,
+    // this.ratings,
+    this.owner,
+    // this.hasil
+  });
 
   CabangOwn.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -224,9 +229,8 @@ class CabangOwn {
     updatedAt = json['updated_at'];
     // ratings =
     //     json['ratings'] != null ? new Ratings.fromJson(json['ratings']) : null;
-    owner = json['owner'] != null
-        ? new OwnerCabangs.fromJson(json['owner'])
-        : null;
+    owner =
+        json['owner'] != null ? new OwnerCabangs.fromJson(json['owner']) : null;
     // if (json['hasil'] != null) {
     //   hasil = new List<Hasil>();
     //   json['hasil'].forEach((v) {

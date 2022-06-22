@@ -32,7 +32,7 @@ class Repository {
   final String baseUrl = "http://arsitekco.proyek.ti.polindra.ac.id/api";
   // final String baseUrl = "http://192.168.42.231:8000/api";
   // final String baseUrl = "http://127.0.0.1:8888/api";
-  // final String baseUrl = "http://192.168.43.170:8000/api";
+  // final String baseUrl = "http://192.168.18.58:8000/api";
 
   // final String baseUrl = "http://192.168.100.75:8000/api";
 
@@ -119,10 +119,11 @@ class Repository {
   Future<List<Project>> getProject() async {
     // String token = await authPreference.getToken();
     final response = await http
-        .get(Uri.parse("$baseUrl/project"),
+        .get(
+          Uri.parse("$baseUrl/project"),
         )
         .timeout(Duration(seconds: 120));
-print("getProjek ${response.statusCode}");
+    print("getProjek ${response.statusCode}");
     final data = jsonDecode(response.body);
     print(data);
     GetProjectResponse record = GetProjectResponse.fromJson(data);
@@ -137,9 +138,10 @@ print("getProjek ${response.statusCode}");
   Future<List<DataConsultant>> getConsultantFromGuest() async {
     // String token = await authPreference.getToken();
     final response = await http
-        .get(Uri.parse("$baseUrl/all-konsultan"),
-            // headers: await HttpHeaders.headers(token: token)
-            )
+        .get(
+          Uri.parse("$baseUrl/all-konsultan"),
+          // headers: await HttpHeaders.headers(token: token)
+        )
         .timeout(Duration(seconds: 120));
     print("Konsul ${response.statusCode}");
     final data = jsonDecode(response.body);
@@ -247,7 +249,6 @@ print("getProjek ${response.statusCode}");
       return record.data;
     }
   }
-
 
   Future<List<DataConsultant>> getConsultantFromOwner(
       AuthPreference authPreference) async {

@@ -36,6 +36,8 @@ class DataContractor {
   String website;
   String instagram;
   String about;
+  String alamat;
+  String slug;
   String createdAt;
   String updatedAt;
   UserContractor user;
@@ -49,6 +51,8 @@ class DataContractor {
       this.website,
       this.instagram,
       this.about,
+      this.alamat,
+      this.slug,
       this.createdAt,
       this.updatedAt,
       this.user,
@@ -64,12 +68,15 @@ class DataContractor {
     //     );
     //   }
     // );
+    print(json['cabang']);
     id = json['id'];
     userId = json['userId'];
     telepon = json['telepon'];
     website = json['website'];
     instagram = json['instagram'];
     about = json['about'];
+    alamat = json['alamat'];
+    slug = json['slug'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
     user =
@@ -80,12 +87,13 @@ class DataContractor {
         files.add(new FilesContractor.fromJson(v));
       });
     }
-   
-      cabangs = json['cabang'].forEach((v) {
-        cabangs.add( Cabang.fromJson(v));
-      }
-      );
-  
+
+    // cabangs = json['cabang'].forEach((v) {
+    //   cabangs.add(Cabang.fromJson(v));
+    // });
+    cabangs = json["cabang"] == null
+        ? null
+        : List<Cabang>.from(json["cabang"].map((x) => Cabang.fromJson(x)));
   }
 
   Map<String, dynamic> toJson() {
@@ -260,7 +268,12 @@ class ImagesContractor {
   String createdAt;
   String updatedAt;
 
-  ImagesContractor({this.id, this.cabangKontraktorId, this.image, this.createdAt, this.updatedAt});
+  ImagesContractor(
+      {this.id,
+      this.cabangKontraktorId,
+      this.image,
+      this.createdAt,
+      this.updatedAt});
 
   ImagesContractor.fromJson(Map<String, dynamic> json) {
     id = json['id'];

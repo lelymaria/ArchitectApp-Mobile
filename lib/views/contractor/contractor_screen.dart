@@ -5,7 +5,6 @@ import 'package:architect_app/models/repositories/repository.dart';
 import 'package:architect_app/models/responses/get_contractor_response.dart';
 import 'package:architect_app/views/contractor/contractor_card.dart';
 import 'package:architect_app/views/contractor/contractor_detail.dart';
-
 import 'package:flutter/material.dart';
 
 class ContractorScreen extends StatefulWidget {
@@ -24,11 +23,8 @@ class _ContractorScreenState extends State<ContractorScreen> {
         child: FutureBuilder(
             future: _repository.getContractorFromOwner(_authPreference),
             builder: (context, AsyncSnapshot snapshot) {
-              print(snapshot.data);
-              print(snapshot.hasData);
-              // print(snapshot.data.length);
+              // print(snapshot.data);
               if (snapshot.hasData) {
-                // print(snapshot.hasData);
                 List<DataContractor> contractors = snapshot.data;
                 return Container(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
@@ -41,11 +37,11 @@ class _ContractorScreenState extends State<ContractorScreen> {
                         child: GestureDetector(
                           onTap: () {
                             Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ContractorDetail(
-                                      contractor: contractor,
-                                    )));
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ContractorDetail(
+                                          contractor: contractor,
+                                        )));
                           },
                           child: ContractorCard(contractor),
                         ),
@@ -53,32 +49,11 @@ class _ContractorScreenState extends State<ContractorScreen> {
                     },
                   ),
                 );
-                // return Container(
-                //   width: double.infinity,
-                //   height: 200,
-                //   child: ListView.builder
-                //   (
-                //     itemCount: contractors.length,
-                //     itemBuilder: (context, index) {
-                      
-                //            DataContractor contractor = contractors[index];
-                //            print(contractor.instagram);
-                //     return Padding(padding: EdgeInsets.all(15),child: GestureDetector(child: ContractorDetail(
-                //     contractor: contractor,
-                //     )),);
-                //   },),
-                // );
               } else {
-                return Center(child: Card(
-                  child: Text("Sedang Dalam Tahap Maintenance"),
-                ),);
+                return Center(child: loadingIndicator);
               }
             }),
       ),
     );
   }
 }
-
-
-
-
