@@ -21,7 +21,7 @@ Tautan ke Repository lain:
 #### 2. Open-closed Principle (OCP)
 
 #### 3. Liskov Substitution Principle (LSP)
-![SOLID-LSP drawio](https://user-images.githubusercontent.com/79303700/175244321-943a6d56-1815-42f7-a845-5da96fe68928.png)
+![SOLID-LSP drawio](https://user-images.githubusercontent.com/79303700/175244541-1aca13c8-f248-43a4-8b08-49e1f62c6369.png)
 
 #### 4. Interface Segregation Principle (ISP)
 
