@@ -20,6 +20,10 @@ Tautan ke Repository lain:
 ### Guest
 ![Home](https://user-images.githubusercontent.com/79303700/175541068-1930c0e7-b03f-42c5-ab94-32a77aa8e97b.png)![Detail](https://user-images.githubusercontent.com/79303700/175541140-9dd8f1c2-0d3d-4434-b653-c0be7bd04399.png)![Proofile](https://user-images.githubusercontent.com/79303700/175541151-b20c9068-06d2-4a3d-9fa0-c90ebf2bc2b3.png)
 
+### Login dan Register
+![Login](https://user-images.githubusercontent.com/79303700/175547612-31ba4424-51aa-4820-afda-2c9512a4f862.png)![Regis](https://user-images.githubusercontent.com/79303700/175547637-1d3a7ee5-6328-4ee8-a473-025039bd4a10.png)
+![Own](https://user-images.githubusercontent.com/79303700/175547667-dd99da1b-30b0-4cec-8a36-63ec9171382c.png)![Kons](https://user-images.githubusercontent.com/79303700/175547713-9075ce66-cdea-4adc-aa25-82960c2d93bb.png)
+
 ### Owner
 ![home](https://user-images.githubusercontent.com/79303700/175541361-c8ff0faa-fef5-4bfb-afc6-b323f2a21259.png)![Lelang](https://user-images.githubusercontent.com/79303700/175542977-d36edd91-c925-4385-8e22-0c3749bdc25f.png)![lelang1](https://user-images.githubusercontent.com/79303700/175541467-e9707395-d165-4234-89db-52cc8105503c.png)
 ![Konsultan](https://user-images.githubusercontent.com/79303700/175541688-3733034d-2c22-42a8-9f86-c7cb82b69d60.png)![Konsultan1](https://user-images.githubusercontent.com/79303700/175542746-f6a8b5da-f67f-4875-82de-5398c83788c5.png)![Home1](https://user-images.githubusercontent.com/79303700/175542663-c44e1e31-9f54-4648-be09-4e0fb2908654.png)
