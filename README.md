@@ -26,7 +26,7 @@ Tautan ke Repository lain:
 ![home2](https://user-images.githubusercontent.com/79303700/175542802-6e7eb5fb-6db8-437b-a7fb-cf14a1355f6f.png)![kontraktor](https://user-images.githubusercontent.com/79303700/175542841-345eab12-7f58-45fa-9d56-5d94c3a2848c.png)![kontraktor1](https://user-images.githubusercontent.com/79303700/175542873-33f6bc57-acb3-4bdb-b953-619dc0734aa6.png)
 ![Pesan](https://user-images.githubusercontent.com/79303700/175543035-b6f41425-e987-4280-b238-5e3a6f96aa90.png)![pesan1](https://user-images.githubusercontent.com/79303700/175543074-17f2ea0b-c6c3-4ce1-8d20-a015740000fa.png)![profile](https://user-images.githubusercontent.com/79303700/175543096-9f70798f-f557-4f0c-beb1-fe9a336a2000.png)
 ![Lelangsaya](https://user-images.githubusercontent.com/79303700/175543133-4757c50d-4905-40ac-89ef-e36b5685393d.png)![Lelangsaya1](https://user-images.githubusercontent.com/79303700/175543166-a653c16c-bda8-4676-982b-5fdae27400ec.png)![projecsaya](https://user-images.githubusercontent.com/79303700/175543218-b0f82410-6f0f-4f8a-8c11-9f6d46044a53.png)
-![projecsaya1](https://user-images.githubusercontent.com/79303700/175543235-3074c16d-7fb7-4444-808c-cdde020c5390.png)![editpro](https://user-images.githubusercontent.com/79303700/175543275-5916330d-4e0a-4051-bc31-015ba229c716.png)![pass](https://user-images.githubusercontent.com/79303700/175543310-b9183e49-08a0-4a50-96f0-b7c186f07f1d.png)
+![projecsaya1](https://user-images.githubusercontent.com/79303700/175544145-107dab22-575d-4b9a-9ddf-27a0ab7ae9ef.png)![editpro](https://user-images.githubusercontent.com/79303700/175543275-5916330d-4e0a-4051-bc31-015ba229c716.png)![pass](https://user-images.githubusercontent.com/79303700/175543310-b9183e49-08a0-4a50-96f0-b7c186f07f1d.png)
 
 
 ## UML Class Diagram
