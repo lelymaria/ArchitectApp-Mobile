@@ -33,7 +33,7 @@ Tautan ke Repository lain:
 ####    Penjelasan:
 ####    Class User merupakan parent class sedangkan child classnya adalah Owner, Konsultan, Kontraktor, dan Admin sehingga method dari child class mewakili parent classnya 
 
-[SOLID-LSP drawio (2)](https://user-images.githubusercontent.com/79303700/175532897-63940ac0-2bd4-4c27-8ade-4331d74115c6.png)
+![SOLID-LSP drawio (2)](https://user-images.githubusercontent.com/79303700/175532897-63940ac0-2bd4-4c27-8ade-4331d74115c6.png)
 
 ### 4. Interface Segregation Principle (ISP)
 ####    Penjelasan:
