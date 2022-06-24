@@ -32,6 +32,16 @@ Tautan ke Repository lain:
 ![Lelangsaya](https://user-images.githubusercontent.com/79303700/175543133-4757c50d-4905-40ac-89ef-e36b5685393d.png)![Lelangsaya1](https://user-images.githubusercontent.com/79303700/175543166-a653c16c-bda8-4676-982b-5fdae27400ec.png)![projecsaya](https://user-images.githubusercontent.com/79303700/175543218-b0f82410-6f0f-4f8a-8c11-9f6d46044a53.png)
 ![projecsaya1](https://user-images.githubusercontent.com/79303700/175544145-107dab22-575d-4b9a-9ddf-27a0ab7ae9ef.png)![editpro](https://user-images.githubusercontent.com/79303700/175543275-5916330d-4e0a-4051-bc31-015ba229c716.png)![pass](https://user-images.githubusercontent.com/79303700/175543310-b9183e49-08a0-4a50-96f0-b7c186f07f1d.png)
 
+## Shared Preferences
+### Digunakan untuk menyimpan data login. Dapat dilihat pada [AuthPreference](https://github.com/lelymaria/ArchitectApp-Mobile/blob/main/lib/models/preferences/auth_preference.dart)
+
+## Firebase
+### Fitur chat menggunakan layanan Firebase Realtime Database. Dapat dilihat pada [Firestore](https://github.com/lelymaria/ArchitectApp-Mobile/blob/main/lib/models/firestore.dart)
+
+## Notification
+### Pada saat mengunduh hasil RAB atau Desain akan muncul notifikasi berikut.
+![Notif](https://user-images.githubusercontent.com/79303700/175551630-ff88d38b-8f06-45fe-b0b5-f7bab96f9702.png)
+
 
 ## UML Class Diagram
 ### 1. Single Responsibility Principle (SRP)
